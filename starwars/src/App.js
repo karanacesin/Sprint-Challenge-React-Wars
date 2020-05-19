@@ -15,7 +15,7 @@ const App = () => {
 
   useEffect(() => {
     axios.get("https://swapi.dev/api/people/").then (response => {
-        setSw(response.data)
+        setSw(response.data.results)
       });
   },[]);
 
@@ -25,9 +25,9 @@ const App = () => {
     <div className="App">
       <h1 className="Header">Characters</h1>
       <ul>
-        {sw.map(switems => {
-           return <Character 
-            key = {switems.index}
+        {sw.map((switems, index) => 
+            <Character 
+            key = {index}
             name = {switems.name}
             gender = {switems.gender}
             birth = {switems.birth_year}
@@ -35,7 +35,7 @@ const App = () => {
             skin = {switems.skin_color}
             eyes = {switems.eye_color}
           />
-        }
+        
         )
       }
       </ul>

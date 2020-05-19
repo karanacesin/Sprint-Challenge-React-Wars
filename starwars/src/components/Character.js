@@ -1,16 +1,17 @@
 import React from 'react';
+import Swcard from './card';
 
 const Character = props => {
 
     return (
-        <li key = {props.index}>
+        <Swcard>
             <h2>{props.name}</h2>
             <p>{props.gender}</p>
             <p>{props.birth}</p>
             <p>{props.hair}</p>
             <p>{props.skin}</p>
             <p>{props.eyes}</p>
-        </li>
+        </Swcard>
     )
 
 }
